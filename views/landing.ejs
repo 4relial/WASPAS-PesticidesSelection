@@ -1,0 +1,66 @@
+<%- include('layout/header') %>
+<header>
+    <!-- Intro settings -->
+    <style>
+      /* Default height for small devices */
+      #intro-example {
+        height: 400px;
+      }
+  
+      /* Height for devices larger than 992px */
+      @media (min-width: 992px) {
+        #intro-example {
+          height: 600px;
+        }
+      }
+    </style>
+  
+    <!-- Background image -->
+    <div id="intro-example" class="p-5 text-center bg-image"
+      style="background-image: url('image/rice.jpg');">
+      <div class="mask" style="background-color: rgba(0, 0, 0, 0.7);">
+        <div class="d-flex justify-content-center align-items-center h-100">
+          <div class="text-white">
+            <h1 class="mb-3">FAMILY SAIYO</h1>
+            <h5 class="mb-4">
+                SISTEM PENDUKUNG KEPUTUSAN PESTISIDA TERBAIK MENGGUNAKAN METODE WASPAS
+            </h5>
+            <a class="btn btn-outline-light btn-lg m-2" href="/data"
+              role="button" rel="nofollow" target="_blank">Data Pestisida</a>
+              <a class="btn btn-outline-light btn-lg m-2" href="/details"
+              role="button" rel="nofollow" target="_blank">Hitung Waspas</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Background image -->
+  </header>
+    <div class="container h-100">
+        <br>
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-lg-12 col-xl-11">
+                <div class="card text-black" style="border-radius: 25px;">
+                    <div class="card-body p-md-5">
+                        <div class="row justify-content-center">
+                            
+                            <blockquote class="blockquote">
+                                Menurut berbagai ahli termasuk Man dan Watson, Sistem Pendukung Keputusan (SPK) merupakan sistem interaktif yang membantu pengambil keputusan dengan menggunakan data dan model keputusan untuk memecahkan masalah semi-terstruktur dan tidak terstruktur (Daulay et al, 2021). Sistem pendukung keputusan digunakan untuk membantu pengambil keputusan dalam menentukan keputusan yang terbaik, namun Sistem Pendukung Keputusan tidak menggantikan pengambil keputusan dalam menentukan keputusan akhir. (Apriani et al, 2021)<br>
+                                Metode WASPAS adalah suatu pendekatan yang menggunakan pembobotan untuk menemukan alternatif pilihan yang sesuai dengan kebutuhan. Dalam metode WASPAS, kriteria optimal dicari berdasarkan dua kriteria yang juga dianggap optimal. Kriteria yang pertama dianggap optimal secara keseluruhan, sedangkan kriteria yang memiliki tingkat kesuksesan rata-rata tertimbang sama dianggap sebagai kriteria kedua. Penggunaan metode ini sangat efektif dalam mengevaluasi beberapa alternatif pilihan keputusan (Trisda Derama, et al, 2022).
+                                <br><br>Berikut adalah beberapa karakteristik dari Sistem Pendukung Keputusan:
+                                <ul>
+                                <li>Sistem pendukung keputusan harus harus mengizinkan pengguna untuk berinteraksi dengan sistem, membuat kueri, mengubah parameter, dan melihat hasil dari proses pengambilan keputusan.</li>
+                                <li>Sistem pendukung keputusan dirancang untuk membantu membuat keputusan. Oleh karena itu, sistem harus menyediakan informasi yang relevan dan berguna bagi para pengambil keputusan.</li>
+                                <li>Sistem pendukung keputusan harus didukung oleh database yang lengkap dan cukup akurat untuk memastikan bahwa informasi yang dihasilkannya akurat dan dapat diandalkan.</li>
+                                <li>Sistem pendukung keputusan harus mampu menganalisis data secara efisien dan efektif. Untuk memberikan informasi yang relevan dan berguna bagi para pengambil keputusan.</li>
+                                <li>Sistem pendukung keputusan harus menggunakan format dan metode yang sesuai untuk memastikan bahwa informasi yang dihasilkan oleh sistem akurat dan dapat diandalkan.</li>
+                                <li>Sistem pendukung keputusan tidak membuat keputusan untuk pengguna. Sebaliknya, ini memberi pengguna informasi dan saran untuk membantu mereka membuat keputusan.</li>
+                                </ul>
+                            </blockquote></div>
+                    </div>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+
+    <%- include('layout/footer') %>

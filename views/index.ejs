@@ -1,0 +1,93 @@
+<%- include('layout/header') %>
+  <br><br>
+  <section style="background-color: #eee;">
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
+            <ol class="breadcrumb mb-0">
+              <li class="breadcrumb-item"><a href="/">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Data</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+      <div class="bg-light rounded-3 p-3 mb-4">
+        <div class="table-title">
+          <div class="row">
+            <div class="col-sm-8">
+              <h3>Tabel <b>Data Pestisida</b></h3>
+            </div>
+            <% if (isAdmin) { %>
+              <div class="col-sm-4 float-right">
+                <a href="/add" class="btn btn-success float-end">Tambah Data</a>
+              </div>
+              <% } %>
+          </div>
+        </div>
+        <div class="table-responsive">
+          <div class="table-wrapper">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col" class="text-center">#</th>
+                  <th scope="col" hidden>ID</th>
+                  <th scope="col">Nama</th>
+                  <th scope="col" class="text-center">Harga</th>
+                  <th scope="col" class="text-center">Kemasan</th>
+                  <th scope="col" class="text-center">Jumlah Penyakit</th>
+                  <th scope="col" class="text-center">Efektivitas</th>
+                  <th scope="col" class="text-center">kadaluarsa</th>
+                  <% if (isAdmin) { %>
+                    <th scope="col" class="text-center">Aksi</th>
+                    <% } %>
+                </tr>
+              </thead>
+              <tbody>
+                <% data.forEach(function(item, index) { %>
+                  <tr>
+                    <th scope="row">
+                      <%= index+1%>
+                    </th>
+                    <td align="left" hidden>
+                      <%= item._id %>
+                    </td>
+                    <td align="left">
+                      <%= item.nama %>
+                    </td>
+                    <td align="center">
+                      <%= item.harga %>
+                    </td>
+                    <td align="center">
+                      <%= item.kemasan %>
+                    </td>
+                    <td align="center">
+                      <%= item.jumlahPenyakit %>
+                    </td>
+                    <td align="center">
+                      <%= item.efektifitas %>
+                    </td>
+                    <td align="center">
+                      <%= item.kadaluarsa %> &nbsp; Tahun
+                    </td>
+                    <% if (isAdmin) { %>
+                      <td align="center">
+                        <a href="/edit?nama=<%= item._id%>" class="btn btn-success badge rounded-pill">Edit</a>
+                        <a href="/delete?nama=<%= item._id%>" onclick="return confirm('Hapus Data <%= item.nama%>')"
+                          class="btn btn-danger badge rounded-pill">Hapus</a>
+                      </td>
+                      <% } %>
+                  </tr>
+                  <% }) %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+  </section>
+
+
+  <%- include('layout/footer') %>

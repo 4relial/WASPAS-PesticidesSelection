@@ -1,0 +1,102 @@
+<%- include('layout/header') %>
+    <section style="background-color: #eee;">
+
+
+        <div class="container py-5">
+            <div class="row">
+                <div class="col"><br>
+                    <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
+                        <ol class="breadcrumb mb-0">
+                            <li class="breadcrumb-item"><a href="/">Home</a></li>
+                            <li class="breadcrumb-item"><a href="/profile">User</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Kelola User</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+            <% if (notif) { %>
+                <div class="d-flex flex-row align-items-center mb-4">
+                    <span id="error-msg" style="color: blue;">
+                        <%= notif%>
+                    </span>
+                </div>
+                <% } %>
+            <% if (warning) { %>
+                <div class="d-flex flex-row align-items-center mb-4">
+                    <span id="error-msg" style="color: red;">
+                        <%= warning%>
+                    </span>
+                </div>
+                <% } %>
+                    <form class="row gy-2 gx-3 align-items-center" action="/edituser" method="POST">
+                        <div class="col-auto">
+                            <div class="form-outline bg-white">
+                                <input type="text" id="username" name="username" class="form-control" />
+                                <label class="form-label" for="username">Username</label>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-primary">Cari User</button>
+                        </div>
+                    </form> <br>
+                    <% if(isValid) { %>
+                        <div class="col-lg-8">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <p class="mb-0">Full Name</p>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <p class="text-muted mb-0">
+                                                <%= dataUser.name%>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <p class="mb-0">Email</p>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <p class="text-muted mb-0">
+                                                <%= dataUser.email%>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <p class="mb-0">Username</p>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <p class="text-muted mb-0">
+                                                <%= dataUser.username%>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <p class="mb-0">Role</p>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <p class="text-muted mb-0">
+                                                <%= dataUser.role%>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="/deleteuser?nama=<%= dataUser.username%>" class="btn btn-danger" onclick="return confirm('Hapus User <%= dataUser.username%>?')">Hapus User</a>
+                        <% if(dataUser.role !=="admin" ) {%>
+                            <a href="/editrole?nama=<%= dataUser.username%>&role=admin" class="btn btn-primary">Jadikan Admin</a>
+                            <% } else {%>
+                                <a href="/editrole?nama=<%= dataUser.username%>&role=user" class="btn btn-primary">Hapus Hak Admin</a>
+                                <% } %>
+                                    <% } %>
+        </div>
+        </div>
+    </section>
+    <%- include('layout/footer') %>

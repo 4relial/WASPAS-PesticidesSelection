@@ -1,0 +1,74 @@
+<%- include('layout/header') %>
+  <br><br>
+  <section>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
+            <ol class="breadcrumb mb-0">
+              <li class="breadcrumb-item"><a href="/">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Data</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+      <!-- <div class="bg-light rounded-3 p-3 mb-4">
+        <div class="table-title">
+          <div class="row">
+            <div class="col-sm-8">
+              <h3>Tabel <b>Hasil Perhitungan WASPAS</b></h3>
+            </div>
+            <div class="col-sm-4">
+              <a href="/pdf" class="btn btn-primary add-new float-end">Cetak PDF</a>
+              <b></b>
+              <a href="/details" class="btn btn-success add-new float-end">Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="table-responsive">
+          <div class="table-wrapper">
+            <table class="table table-bordered">
+              <caption>
+                <%= hitungWaspas.hasil%>
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col" align="center">Ranking</th>
+                  <th scope="col" align="left">Nama</th>
+                  <th scope="col" align="left">Jumlah Nilai</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% hitungWaspas.Qi.forEach(function(item, index) { %>
+                  <tr>
+                    <th scope="row" align="center">
+                      <%= index+1%>
+                    </th>
+                    <td align="left">
+                      <%= item.nama %>
+                    </td>
+                    <td align="left">
+                      <%= item.nilaiQ %>
+                    </td>
+                  </tr>
+                  <% }) %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div> -->
+      <div class="card text-center">
+        <div class="card-header">Hasil Perhitungan WASPAS</div>
+        <div class="card-body">
+          <h5 class="card-title"><%= hitungWaspas.hasil%></h5>
+          <p class="card-text">Klik tombol dibawah untuk melihat details perhitungan dan mengunduh laporan</p>
+          <a href="/pdf" class="btn btn-primary">Cetak Laporan</a> <a href="/details" class="btn btn-success">Details Perhitungan</a>
+        </div>
+        <div class="card-footer text-muted">Kelompok Tani Family Saiyo</div>
+      </div>
+    </div>
+    <br>
+  </section>
+
+  <%- include('layout/footer') %>

@@ -1,0 +1,148 @@
+<%- include('layout/header') %>
+<br><br>
+    <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-lg-12 col-xl-11">
+                <div class="card text-black" style="border-radius: 25px;">
+                    <div class="card-body p-md-5">
+                        <div class="row justify-content-center">
+                            <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Edit Data Pestisida</p>
+
+                                <form class="mx-1 mx-md-4" action="/edit" method="POST">
+                                    <% if (result) { %>
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <span id="error-msg" style="color: green;">
+                                                <%= result %>
+                                            </span>
+                                        </div>
+                                        <% } %>
+                                            <% if (error) { %>
+                                                <div class="d-flex flex-row align-items-center mb-4">
+                                                    <span id="error-msg" style="color: red;">
+                                                        <%= error %>
+                                                    </span>
+                                                </div>
+                                                <% } %>
+                                                <label for="nama">ID Pestisida</label>
+                                                    <div class="d-flex flex-row align-items-center mb-4">
+                                                        <div class="form-outline flex-fill mb-0">
+
+                                                            <input type="text" id="id" name="id"
+                                                                class="form-control" value="<%= data._id%>" readonly />
+                                                        </div>
+                                                    </div>
+                                                    <label for="nama">Nama Pestisida</label>
+                                                    <div class="d-flex flex-row align-items-center mb-4">
+                                                        <div class="form-outline flex-fill mb-0">
+
+                                                            <input type="text" id="nama" name="nama"
+                                                                class="form-control" value="<%= data.nama%>"/>
+                                                        </div>
+                                                    </div>
+                                                    <label for="harga">Harga Pestisida (Rp)</label>
+                                                    <div class="d-flex flex-row align-items-center mb-4">
+                                                        <div class="form-outline flex-fill mb-0">
+
+                                                            <input type="number" id="harga" name="harga"
+                                                                class="form-control" value="<%= data.harga%>" required/>
+                                                        </div>
+                                                    </div>
+                                                    <label for="kemasan">Kemasan (ml/gr)</label>
+                                                    <div class="d-flex flex-row align-items-center mb-4">
+                                                        <div class="form-outline flex-fill mb-0">
+
+                                                            <input type="number" id="kemasan" name="kemasan"
+                                                                class="form-control" value="<%= data.kemasan%>" required/>
+                                                        </div>
+                                                    </div>
+                                                    <label for="jumlahPenyakit">Jumlah Penyakit</label>
+                                                    <div class="d-flex flex-row align-items-center mb-4">
+                                                        <div class="form-outline flex-fill mb-0">
+
+                                                            <input type="number" id="jumlahPenyakit"
+                                                                name="jumlahPenyakit" class="form-control"
+                                                                value="<%= data.jumlahPenyakit%>" required/>
+                                                        </div>
+                                                    </div>
+                                                    <label for="luas">Lama kadaluarsa (Tahun)</label>
+                                                    <div class="d-flex flex-row align-items-center mb-4">
+                                                        <div class="form-outline flex-fill mb-0">
+
+                                                            <input type="number" id="kadaluarsa" name="kadaluarsa"
+                                                                class="form-control" value="<%= data.kadaluarsa%>" required/>
+                                                        </div>
+                                                    </div>
+                                                    <label for="efektifitas">Tingkat Efektifitas</label>
+                                                    <div class="d-flex flex-row align-items-center mb-4">
+                                                        <div class="form-outline flex-fill mb-0">
+
+                                                            <select class="form-control form-select border" id="efektifitas"
+                                                                name="efektifitas">
+                                                                <option value="Sangat Efektif"
+                                                                    <%=data.efektifitas.toLowerCase()=="sangat efektif"
+                                                                    ? 'selected' : '' %>>Sangat Efektif</option>
+                                                                <option value="Efektif"
+                                                                    <%=data.efektifitas.toLowerCase()=="efektif"
+                                                                    ? 'selected' : '' %>>Efektif</option>
+                                                                <option value="Cukup Efektif"
+                                                                    <%=data.efektifitas.toLowerCase()=="cukup efektif"
+                                                                    ? 'selected' : '' %>>Cukup Efektif</option>
+                                                                <option value="Kurang Efektif"
+                                                                    <%=data.efektifitas.toLowerCase()=="kurang efektif"
+                                                                    ? 'selected' : '' %>>Kurang Efektif</option>
+                                                                <option value="Tidak Efektif"
+                                                                    <%=data.efektifitas.toLowerCase()=="tidak efektif"
+                                                                    ? 'selected' : '' %>>Tidak Efektif</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    
+
+                                                    <div class="d-flex flex-row align-items-center mb-4">
+                                                        <span id="error-msg" style="color: red;"></span>
+                                                    </div>
+                                                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                                                        <button type="submit" class="btn btn-primary btn-block mb-4"
+                                                            onclick="return validateForm()">Edit Data</button>
+                                                    </div>
+                                </form>
+
+                            </div>
+                            <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+
+                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                                    class="img-fluid" alt="Sample image">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            const nama = document.forms[0].elements.nama.value;
+            const harga = document.forms[0].elements.harga.value;
+            const kemasan = document.forms[0].elements.kemasan.value;
+            const type = document.forms[0].elements.type.value;
+            const jumlahPenyakit = document.forms[0].elements.jumlahPenyakit.value;
+            const efektifitas = document.forms[0].elements.efektifitas.value;
+            const kadaluarsa = document.forms[0].elements.kadaluarsa.value;
+
+            const errorMsg = document.getElementById('error-msg');
+
+            if (!nama || !harga || !kemasan || !jumlahPenyakit || efektifitas == 0 || !kadaluarsa || type == 0) {
+                errorMsg.textContent = "Harap isi seluruh Form!";
+                return false;
+            } else {
+                errorMsg.textContent = '';
+                return true;
+            }
+        }
+    </script>
+
+    <%- include('layout/footer') %>

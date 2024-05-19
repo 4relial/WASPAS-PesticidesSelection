@@ -1,0 +1,428 @@
+<%- include('layout/header') %>
+    <br><br>
+    <section style="background-color: #eee;">
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
+                        <ol class="breadcrumb mb-0">
+                            <li class="breadcrumb-item"><a href="/">Home</a></li>
+                            <li class="breadcrumb-item"><a href="/hasil">Hasil</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Details</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+            <div class="bg-light rounded-3 p-3 mb-4">
+                <div class="table-title">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <h5>Tabel <b>Data Pestisida</b></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <div class="table-wrapper">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="text-center">#</th>
+                                    <th scope="col">Nama</th>
+                                    <th scope="col" class="text-center">Harga</th>
+                                    <th scope="col" class="text-center">Kemasan</th>
+                                    <th scope="col" class="text-center">Jumlah Penyakit</th>
+                                    <th scope="col" class="text-center">Efektivitas</th>
+                                    <th scope="col" class="text-center">kadaluarsa</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% data.forEach(function(item, index) { %>
+                                    <tr>
+                                        <th scope="row">
+                                            <%= index+1%>
+                                        </th>
+                                        <td align="left">
+                                            <%= item.nama %>
+                                        </td>
+                                        <td align="center">
+                                            <%= item.harga %>
+                                        </td>
+                                        <td align="center">
+                                            <%= item.kemasan %>
+                                        </td>
+                                        <td align="center">
+                                            <%= item.jumlahPenyakit %>
+                                        </td>
+                                        <td align="center">
+                                            <%= item.efektifitas %>
+                                        </td>
+                                        <td align="center">
+                                            <%= item.kadaluarsa %> &nbsp; Tahun
+                                        </td>
+                                    </tr>
+                                    <% }) %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-light rounded-3 p-3 mb-4">
+                <h4 class="text-center">Detail Perhitungan Metode Waspas</h4>
+            </div>
+            <div class="bg-light rounded-3 p-3 mb-4">
+                <div class="table-title">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <h5>Tabel <b>Nilai Kecocokan Kriteria</b></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <div class="table-wrapper">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="text-center">Kriteria</th>
+                                    <th scope="col" class="text-center">Sub Kriteria</th>
+                                    <th scope="col" class="text-center">Nilai</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <!-- Harga -->
+                                <tr class="table4re">
+                                    <td align="center" class="align-middle table4" rowspan="5"><b>Harga</b></td>
+                                    <td align="left">&lt;30.000</td>
+                                    <td align="left">1</td>
+                                </tr>
+                                <tr class="table4re">
+                                    <td align="left">30.000 - 49.999</td>
+                                    <td align="left">2</td>
+                                </tr>
+                                <tr class="table4re">
+                                    <td align="left">50.000-69.999</td>
+                                    <td align="left">3</td>
+                                </tr>
+                                <tr class="table4re">
+                                    <td align="left">70.000-99.999</td>
+                                    <td align="left">4</td>
+                                </tr>
+                                <tr class="table4re">
+                                    <td align="left">&#60;=100.000</td>
+                                    <td align="left">5</td>
+                                </tr>
+
+                                <!-- kemasan -->
+                                <tr>
+                                    <td align="center" class="align-middle" rowspan="5"><b>Kemasan</b></td>
+                                    <td align="left">&lt;100</td>
+                                    <td align="left">1</td>
+                                </tr>
+                                <tr>
+                                    <td align="left">100 - 399</td>
+                                    <td align="left">2</td>
+                                </tr>
+                                <tr>
+                                    <td align="left">400 - 699</td>
+                                    <td align="left">3</td>
+                                </tr>
+                                <tr>
+                                    <td align="left">700 - 999</td>
+                                    <td align="left">4</td>
+                                </tr>
+                                <tr>
+                                    <td align="left">&#60;=1000</td>
+                                    <td align="left">5</td>
+                                </tr>
+
+                                <!-- jumlah penyakit -->
+                                <tr class="table4re">
+                                    <td align="center" class="align-middle" rowspan="5"><b>Jumlah Penyakit</b></td>
+                                    <td align="left">&lt;2</td>
+                                    <td align="left">1</td>
+                                </tr>
+                                <tr class="table4re">
+                                    <td align="left">2 - 3</td>
+                                    <td align="left">2</td>
+                                </tr>
+                                <tr class="table4re">
+                                    <td align="left">4 - 5</td>
+                                    <td align="left">3</td>
+                                </tr>
+                                <tr class="table4re">
+                                    <td align="left">6 - 7</td>
+                                    <td align="left">4</td>
+                                </tr>
+                                <tr class="table4re">
+                                    <td align="left">&#60;=8</td>
+                                    <td align="left">5</td>
+                                </tr>
+
+                                <!-- jumlah penyakit -->
+                                <tr>
+                                    <td align="center" class="align-middle" rowspan="5"><b>Efektivitas</b></td>
+                                    <td align="left">Tidak Efektif</td>
+                                    <td align="left">1</td>
+                                </tr>
+                                <tr>
+                                    <td align="left">Kurang Efektif</td>
+                                    <td align="left">2</td>
+                                </tr>
+                                <tr>
+                                    <td align="left">Cukup Efektif</td>
+                                    <td align="left">3</td>
+                                </tr>
+                                <tr>
+                                    <td align="left">Efektif</td>
+                                    <td align="left">4</td>
+                                </tr>
+                                <tr>
+                                    <td align="left">Sangat Efektif</td>
+                                    <td align="left">5</td>
+                                </tr>
+
+                                <!-- Kadaluarsa -->
+                                <tr class="table4re">
+                                    <td align="center" class="align-middle" rowspan="5"><b>Kadaluarsa</b></td>
+                                    <td align="left">1</td>
+                                    <td align="left">1</td>
+                                </tr>
+                                <tr class="table4re">
+                                    <td align="left">2</td>
+                                    <td align="left">2</td>
+                                </tr>
+                                <tr class="table4re">
+                                    <td align="left">3</td>
+                                    <td align="left">3</td>
+                                </tr>
+                                <tr class="table4re">
+                                    <td align="left">4</td>
+                                    <td align="left">4</td>
+                                </tr>
+                                <tr class="table4re">
+                                    <td align="left">&#60;=5</td>
+                                    <td align="left">5</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div><br>
+                <div class="table-title">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <h5>Tabel <b>Kategori Kriteria dan Bobot</b></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <div class="table-wrapper">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="text-center">Kriteria</th>
+                                    <th scope="col" class="text-center">Kategori</th>
+                                    <th scope="col" class="text-center">Bobot</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- kemasan -->
+                                <tr>
+                                    <td align="center">Harga</td>
+                                    <td align="center">Cost</td>
+                                    <td align="center">0,2</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">Kemasan</td>
+                                    <td align="center">Benefit</td>
+                                    <td align="center">0,2</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">Jumlah Penyakit</td>
+                                    <td align="center">Benefit</td>
+                                    <td align="center">0,2</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">Efektivitas</td>
+                                    <td align="center">Benefit</td>
+                                    <td align="center">0,3</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">Kadaluarsa</td>
+                                    <td align="center">Benefit</td>
+                                    <td align="center">0,1</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-light rounded-3 p-3 mb-4">
+                <h4>
+                    1. Lakukan Normalisasi Data (Matriks Keputusan)
+                </h4>
+                <blockquote class="blockquote">
+                    <p class="mb-0">Normalisasi dilakukan berdasarkan tabel Nilai Kecocokan Kriteria, berdasarkan tabel
+                        tersebut
+                        maka hasil normalisasi data pestisida adalah sebagai berikut:</p>
+                </blockquote>
+                <div class="table-title">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <h5>Tabel <b>Normalisasi Data</b></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <div class="table-wrapper">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="text-center">#</th>
+                                    <th scope="col">Nama</th>
+                                    <th scope="col" class="text-center">Harga</th>
+                                    <th scope="col" class="text-center">Kemasan</th>
+                                    <th scope="col" class="text-center">Jumlah Penyakit</th>
+                                    <th scope="col" class="text-center">Efektivitas</th>
+                                    <th scope="col" class="text-center">kadaluarsa</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% hitungWaspas.normData.forEach(function(item, index) { %>
+                                    <tr>
+                                        <th scope="row">
+                                            <%= index+1%>
+                                        </th>
+                                        <td align="left">
+                                            <%= item.nama %>
+                                        </td>
+                                        <td align="center">
+                                            <%= item.harga %>
+                                        </td>
+                                        <td align="center">
+                                            <%= item.kemasan %>
+                                        </td>
+                                        <td align="center">
+                                            <%= item.jumlahPenyakit %>
+                                        </td>
+                                        <td align="center">
+                                            <%= item.efektifitas %>
+                                        </td>
+                                        <td align="center">
+                                            <%= item.kadaluarsa %>
+                                        </td>
+                                    </tr>
+                                    <% }) %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div><br>
+            </div>
+            <div class="bg-light rounded-3 p-3 mb-4">
+                <h4>
+                    2. Lakukan Normalisasi Matriks
+                </h4>
+                <blockquote class="blockquote">
+                    <p class="mb-0">Normalisasi dilakukan berdasarkan tabel berikut ini:</p>
+                </blockquote>
+                <div class="table-title">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <h5>Tabel <b>Normalisasi Matriks</b></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <div class="table-wrapper">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="text-center">#</th>
+                                    <th scope="col">Nama</th>
+                                    <th scope="col" class="text-center">Harga</th>
+                                    <th scope="col" class="text-center">Kemasan</th>
+                                    <th scope="col" class="text-center">Jumlah Penyakit</th>
+                                    <th scope="col" class="text-center">Efektivitas</th>
+                                    <th scope="col" class="text-center">kadaluarsa</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% hitungWaspas.normMatriks.forEach(function(item, index) { %>
+                                    <tr>
+                                        <th scope="row">
+                                            <%= index+1%>
+                                        </th>
+                                        <td align="left">
+                                            <%= item.nama %>
+                                        </td>
+                                        <td align="center">
+                                            <%= item.harga %>
+                                        </td>
+                                        <td align="center">
+                                            <%= item.kemasan %>
+                                        </td>
+                                        <td align="center">
+                                            <%= item.jumlahPenyakit %>
+                                        </td>
+                                        <td align="center">
+                                            <%= item.efektifitas %>
+                                        </td>
+                                        <td align="center">
+                                            <%= item.kadaluarsa %>
+                                        </td>
+                                    </tr>
+                                    <% }) %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div><br>
+            </div>
+            <div class="bg-light rounded-3 p-3 mb-4">
+                <h4>
+                    3. Menghitung Nilai Qi
+                </h4>
+                <div class="table-title">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <h5>Tabel <b>Perankingan (Nilai Q)</b></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <div class="table-wrapper">
+                        <table class="table table-bordered">
+                            <caption>
+                                <%= hitungWaspas.hasil%>
+                            </caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col" align="center">Ranking</th>
+                                    <th scope="col" align="left">Nama</th>
+                                    <th scope="col" align="left">Jumlah Nilai</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% hitungWaspas.Qi.forEach(function(item, index) { %>
+                                    <tr>
+                                        <th scope="row" align="center">
+                                            <%= index+1%>
+                                        </th>
+                                        <td align="left">
+                                            <%= item.nama %>
+                                        </td>
+                                        <td align="left">
+                                            <%= item.nilaiQ %>
+                                        </td>
+                                    </tr>
+                                    <% }) %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+    </section>
+
+
+    <%- include('layout/footer') %>
